@@ -10,12 +10,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "./togglemode";
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "/features" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "About", href: "/about" },
+  { name: "Categories", href: "/services" },
+  { name: "Pricing Plans", href: "/pricing" },
+  { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -49,7 +50,7 @@ export function Navbar() {
 
         <div className="flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">Brand</span>
+            <Image src={"/logo.png"} width={60} height={40} alt="logo"/>
           </Link>
           <ModeToggle />
         </div>
