@@ -1,10 +1,10 @@
 import { connectDB } from "@/lib/mongodb";
-import Service from "@/models/service";
+import Service from "@/models/Service";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   await connectDB();
-  const services = await Service.find().sort({ createdAt: -1 });
+  const services = await Service.find();
   return NextResponse.json(services);
 }
 

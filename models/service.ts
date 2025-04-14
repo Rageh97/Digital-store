@@ -12,6 +12,7 @@ export interface IService extends Document {
 const ServiceSchema: Schema = new Schema(
   {
     title: { type: String, required: true },
+    slug: { type: String, required: true },
     description: { type: String },
     imageUrl: { type: String },
     category: { type: String }, // تصنيف فرعي إن وجد
