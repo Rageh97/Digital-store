@@ -42,4 +42,19 @@ export const services = [
       },
     ],
   },
+  {
+    title: "تطبيقات مدفوعة",
+    slug: "apps",
+    description: "خدمة التطبيقات الجاهزة للشراء",
+    imageUrl: "/category.jpeg",
+    products: [
+      {
+        name: "تطبيق متجر إلكتروني",
+        slug: "store-app",
+        price: 1200,
+        description: "تطبيق جاهز لمتجرك",
+        imageUrl: "/category.jpeg",
+      },
+    ],
+  },
 ];

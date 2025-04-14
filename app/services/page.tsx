@@ -2,7 +2,7 @@ import { ServiceCard } from "@/components/service-card";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 import { services } from "@/lib/utils";
-export default function Home() {
+export default function AllServices() {
   return (
     <main className="container mx-auto py-12">
       <h1 className="mb-8 text-center text-3xl font-bold">ALL Categories</h1>
