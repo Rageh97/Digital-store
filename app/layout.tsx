@@ -1,9 +1,9 @@
+
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-
+import { Providers } from "@/lib/providers/providers";
 const rubik = Rubik({
   variable: "--font-rubik",
   weight: ["400", "600", "700"],
@@ -22,18 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${rubik.variable}  antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar/>
+      <body className={`${rubik.variable}  antialiased`}>
+      <Providers>
+          <Navbar />
           {children}
-        </ThemeProvider>
+        </Providers>
+        ;
       </body>
     </html>
   );

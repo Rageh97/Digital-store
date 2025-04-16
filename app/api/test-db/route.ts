@@ -1,15 +1,15 @@
-import { connectDB } from "@/lib/mongodb";
-import { NextResponse } from "next/server";
+
+import { PrismaClient } from '@prisma/client'
+import { NextResponse } from 'next/server'
+
+const prisma = new PrismaClient()
 
 export async function GET() {
   try {
-    await connectDB();
-    return NextResponse.json({ message: "Connected to MongoDB successfully!" });
+    await prisma.$connect()
+    return NextResponse.json({ message: '✅ Connected to database successfully!' })
   } catch (error) {
-    console.error("Database connection error:", error);
-    return NextResponse.json(
-      { message: "Failed to connect to MongoDB" },
-      { status: 500 }
-    );
+    console.error('❌ DB Connection Error:', error)
+    return NextResponse.json({ error: '❌ Failed to connect to database' }, { status: 500 })
   }
 }
